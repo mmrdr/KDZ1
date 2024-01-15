@@ -6,7 +6,7 @@ namespace Smth
     {
         static void Main(string[] args)
         {
-            JsonParser.GetFilePath();
+
         }
     }
 }

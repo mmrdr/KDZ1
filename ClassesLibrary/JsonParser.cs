@@ -4,7 +4,7 @@
     {
         private static string file_path;
 
-        public static AppUser[] ReadJson()
+        public static AppUser[] ReadJson(string path)
         {
             throw new NotImplementedException();
         }
