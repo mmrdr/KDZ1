@@ -47,17 +47,4 @@
             _orders = orders;          
         }
     }
-    
-    public static class JsonParser
-    {
-        public static AppUser[] ReadJson()
-        {
-            throw new NotImplementedException();
-        }
-
-        public static void WriteJson()
-        {
-            throw new NotImplementedException();
-        }
-    }
 }
