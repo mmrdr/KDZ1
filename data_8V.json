@@ -1,0 +1,1250 @@
+[
+  {
+    "customer_id": 1,
+    "name": "Wendy King",
+    "email": "susan72@example.net",
+    "age": 50,
+    "city": "Lindaberg",
+    "is_premium": true,
+    "orders": [
+      32.65,
+      99.34,
+      166.58,
+      188.12
+    ]
+  },
+  {
+    "customer_id": 2,
+    "name": "Charles Wolfe",
+    "email": "nelsongabrielle@example.net",
+    "age": 27,
+    "city": "New Daniellestad",
+    "is_premium": true,
+    "orders": [
+      105.42,
+      171.75,
+      148.18
+    ]
+  },
+  {
+    "customer_id": 3,
+    "name": "Courtney Richards",
+    "email": "rconner@example.net",
+    "age": 43,
+    "city": "Harrytown",
+    "is_premium": false,
+    "orders": [
+      126.82,
+      85.8,
+      161.32
+    ]
+  },
+  {
+    "customer_id": 4,
+    "name": "Jeffrey Barnes",
+    "email": "bentleyjennifer@example.org",
+    "age": 53,
+    "city": "Vasqueztown",
+    "is_premium": false,
+    "orders": [
+      46.08,
+      26.7
+    ]
+  },
+  {
+    "customer_id": 5,
+    "name": "Mary Ryan",
+    "email": "bradley04@example.com",
+    "age": 46,
+    "city": "Johnland",
+    "is_premium": true,
+    "orders": [
+      34.75
+    ]
+  },
+  {
+    "customer_id": 6,
+    "name": "Pamela Adams",
+    "email": "jose77@example.org",
+    "age": 53,
+    "city": "North Craig",
+    "is_premium": true,
+    "orders": [
+      107.84,
+      177.47,
+      35.43,
+      91.1
+    ]
+  },
+  {
+    "customer_id": 7,
+    "name": "David Roth",
+    "email": "igonzalez@example.com",
+    "age": 48,
+    "city": "Millermouth",
+    "is_premium": true,
+    "orders": [
+      167.21
+    ]
+  },
+  {
+    "customer_id": 8,
+    "name": "Kimberly Armstrong",
+    "email": "callahansara@example.org",
+    "age": 21,
+    "city": "Chelseymouth",
+    "is_premium": false,
+    "orders": [
+      22.88,
+      66.54,
+      73.84,
+      54.73
+    ]
+  },
+  {
+    "customer_id": 9,
+    "name": "Tommy Black",
+    "email": "jlynn@example.org",
+    "age": 21,
+    "city": "Haynesburgh",
+    "is_premium": false,
+    "orders": [
+      179.11
+    ]
+  },
+  {
+    "customer_id": 10,
+    "name": "Matthew Johnson",
+    "email": "ebony53@example.com",
+    "age": 47,
+    "city": "Andradeport",
+    "is_premium": false,
+    "orders": [
+      46.78
+    ]
+  },
+  {
+    "customer_id": 11,
+    "name": "Tina Boyd",
+    "email": "smithalyssa@example.org",
+    "age": 30,
+    "city": "Katherinemouth",
+    "is_premium": false,
+    "orders": [
+      49.39,
+      133.59
+    ]
+  },
+  {
+    "customer_id": 12,
+    "name": "Jessica Phillips",
+    "email": "weberscott@example.com",
+    "age": 26,
+    "city": "Ellisport",
+    "is_premium": true,
+    "orders": [
+      46.82,
+      127.76,
+      89.26,
+      20.49
+    ]
+  },
+  {
+    "customer_id": 13,
+    "name": "Justin Campbell",
+    "email": "shawn05@example.net",
+    "age": 63,
+    "city": "New Michael",
+    "is_premium": false,
+    "orders": [
+      22.75,
+      55.83,
+      78.91
+    ]
+  },
+  {
+    "customer_id": 14,
+    "name": "Maria Norman",
+    "email": "cooperanthony@example.com",
+    "age": 63,
+    "city": "New Brandon",
+    "is_premium": false,
+    "orders": [
+      44.94,
+      54.35
+    ]
+  },
+  {
+    "customer_id": 15,
+    "name": "Derek Williams",
+    "email": "zmorgan@example.org",
+    "age": 34,
+    "city": "Hardymouth",
+    "is_premium": true,
+    "orders": [
+      52.94,
+      159.76
+    ]
+  },
+  {
+    "customer_id": 16,
+    "name": "William Cohen",
+    "email": "jacksondaniel@example.org",
+    "age": 22,
+    "city": "Stewartborough",
+    "is_premium": true,
+    "orders": [
+      25.61,
+      38.7,
+      184.55
+    ]
+  },
+  {
+    "customer_id": 17,
+    "name": "Nicole Brown",
+    "email": "simmonskaren@example.net",
+    "age": 19,
+    "city": "Port Tammy",
+    "is_premium": true,
+    "orders": [
+      75.63,
+      173.0,
+      55.7
+    ]
+  },
+  {
+    "customer_id": 18,
+    "name": "Cindy Caldwell",
+    "email": "imorales@example.net",
+    "age": 25,
+    "city": "Leeland",
+    "is_premium": true,
+    "orders": [
+      193.65,
+      56.13
+    ]
+  },
+  {
+    "customer_id": 19,
+    "name": "Rebecca Ayala",
+    "email": "sandra12@example.org",
+    "age": 45,
+    "city": "New Ruth",
+    "is_premium": false,
+    "orders": [
+      173.45,
+      86.91
+    ]
+  },
+  {
+    "customer_id": 20,
+    "name": "Denise Herrera",
+    "email": "jameshall@example.net",
+    "age": 40,
+    "city": "Lake Dana",
+    "is_premium": true,
+    "orders": [
+      183.73,
+      121.32,
+      23.12,
+      145.07
+    ]
+  },
+  {
+    "customer_id": 21,
+    "name": "Jaclyn Johnson",
+    "email": "douglasbarbara@example.net",
+    "age": 44,
+    "city": "Aliciaton",
+    "is_premium": false,
+    "orders": [
+      161.08,
+      82.8,
+      99.55,
+      56.45
+    ]
+  },
+  {
+    "customer_id": 22,
+    "name": "Heather Tran",
+    "email": "kiara54@example.org",
+    "age": 60,
+    "city": "East Jaymouth",
+    "is_premium": true,
+    "orders": [
+      194.81
+    ]
+  },
+  {
+    "customer_id": 23,
+    "name": "Stephen Roberts",
+    "email": "crystal02@example.com",
+    "age": 61,
+    "city": "North Michael",
+    "is_premium": true,
+    "orders": [
+      152.76,
+      169.1,
+      199.73
+    ]
+  },
+  {
+    "customer_id": 24,
+    "name": "Courtney Hancock",
+    "email": "angelsingh@example.com",
+    "age": 60,
+    "city": "North Michaelton",
+    "is_premium": false,
+    "orders": [
+      30.2
+    ]
+  },
+  {
+    "customer_id": 25,
+    "name": "Shelby Macias",
+    "email": "laurenflynn@example.net",
+    "age": 62,
+    "city": "Lake Lisaton",
+    "is_premium": false,
+    "orders": [
+      42.58
+    ]
+  },
+  {
+    "customer_id": 26,
+    "name": "Tammie Baker",
+    "email": "marycox@example.com",
+    "age": 42,
+    "city": "Seanview",
+    "is_premium": true,
+    "orders": [
+      74.57,
+      159.24,
+      168.37,
+      28.39
+    ]
+  },
+  {
+    "customer_id": 27,
+    "name": "Joseph Saunders",
+    "email": "tracey76@example.org",
+    "age": 30,
+    "city": "New Maria",
+    "is_premium": false,
+    "orders": [
+      193.98,
+      111.99,
+      142.69,
+      139.77
+    ]
+  },
+  {
+    "customer_id": 28,
+    "name": "Thomas Graham",
+    "email": "jeremiah80@example.org",
+    "age": 20,
+    "city": "East Terri",
+    "is_premium": true,
+    "orders": [
+      120.45,
+      146.36,
+      141.59,
+      180.38
+    ]
+  },
+  {
+    "customer_id": 29,
+    "name": "Robert Lewis",
+    "email": "martindevin@example.com",
+    "age": 20,
+    "city": "Darleneshire",
+    "is_premium": false,
+    "orders": [
+      79.49,
+      30.77,
+      117.99,
+      40.75
+    ]
+  },
+  {
+    "customer_id": 30,
+    "name": "Jessica King",
+    "email": "sharonpetersen@example.net",
+    "age": 50,
+    "city": "Salazarmouth",
+    "is_premium": true,
+    "orders": [
+      163.39,
+      158.93,
+      169.39
+    ]
+  },
+  {
+    "customer_id": 31,
+    "name": "Carmen Silva",
+    "email": "ncook@example.org",
+    "age": 50,
+    "city": "Adkinsmouth",
+    "is_premium": true,
+    "orders": [
+      97.8,
+      129.44
+    ]
+  },
+  {
+    "customer_id": 32,
+    "name": "Vickie Casey",
+    "email": "pwhite@example.com",
+    "age": 23,
+    "city": "Veronicachester",
+    "is_premium": true,
+    "orders": [
+      44.99
+    ]
+  },
+  {
+    "customer_id": 33,
+    "name": "Christie Ayala",
+    "email": "drew98@example.net",
+    "age": 27,
+    "city": "West Shannon",
+    "is_premium": true,
+    "orders": [
+      188.87
+    ]
+  },
+  {
+    "customer_id": 34,
+    "name": "Kristy Mendez",
+    "email": "janet74@example.com",
+    "age": 28,
+    "city": "Baileyberg",
+    "is_premium": true,
+    "orders": [
+      112.77,
+      195.81,
+      132.37,
+      12.64
+    ]
+  },
+  {
+    "customer_id": 35,
+    "name": "Megan Gonzalez",
+    "email": "alexander88@example.net",
+    "age": 36,
+    "city": "South Christopherberg",
+    "is_premium": false,
+    "orders": [
+      160.81
+    ]
+  },
+  {
+    "customer_id": 36,
+    "name": "Michael Howard",
+    "email": "desparza@example.net",
+    "age": 53,
+    "city": "Port Russellchester",
+    "is_premium": true,
+    "orders": [
+      166.25
+    ]
+  },
+  {
+    "customer_id": 37,
+    "name": "Megan Perez",
+    "email": "ejones@example.org",
+    "age": 63,
+    "city": "East Katiefurt",
+    "is_premium": false,
+    "orders": [
+      134.83,
+      141.16,
+      115.88
+    ]
+  },
+  {
+    "customer_id": 38,
+    "name": "Angela Martin",
+    "email": "hwilson@example.com",
+    "age": 35,
+    "city": "Edwardhaven",
+    "is_premium": false,
+    "orders": [
+      129.99,
+      106.55,
+      70.04,
+      156.55
+    ]
+  },
+  {
+    "customer_id": 39,
+    "name": "Matthew Dean",
+    "email": "christinaellis@example.com",
+    "age": 59,
+    "city": "Charlestown",
+    "is_premium": true,
+    "orders": [
+      42.97,
+      112.9
+    ]
+  },
+  {
+    "customer_id": 40,
+    "name": "Ryan Martin",
+    "email": "mcdonaldjasmine@example.net",
+    "age": 24,
+    "city": "Grahamside",
+    "is_premium": false,
+    "orders": [
+      191.24,
+      154.04,
+      81.61,
+      168.22
+    ]
+  },
+  {
+    "customer_id": 41,
+    "name": "Cheryl Guerrero",
+    "email": "kaylee25@example.org",
+    "age": 56,
+    "city": "Ryanburgh",
+    "is_premium": true,
+    "orders": [
+      45.63
+    ]
+  },
+  {
+    "customer_id": 42,
+    "name": "Elizabeth Scott",
+    "email": "tchristian@example.org",
+    "age": 21,
+    "city": "Lake David",
+    "is_premium": true,
+    "orders": [
+      42.73,
+      94.61
+    ]
+  },
+  {
+    "customer_id": 43,
+    "name": "Emily Reyes",
+    "email": "mariewade@example.com",
+    "age": 30,
+    "city": "West Aprilland",
+    "is_premium": true,
+    "orders": [
+      161.1
+    ]
+  },
+  {
+    "customer_id": 44,
+    "name": "Martin Marks",
+    "email": "jessicaanderson@example.org",
+    "age": 63,
+    "city": "Nguyenburgh",
+    "is_premium": false,
+    "orders": [
+      142.67
+    ]
+  },
+  {
+    "customer_id": 45,
+    "name": "Andrea Scott",
+    "email": "alexanderdean@example.net",
+    "age": 32,
+    "city": "North Wendymouth",
+    "is_premium": false,
+    "orders": [
+      116.12,
+      155.48,
+      140.27
+    ]
+  },
+  {
+    "customer_id": 46,
+    "name": "Lindsey Thomas",
+    "email": "darryldavies@example.net",
+    "age": 23,
+    "city": "Coxland",
+    "is_premium": true,
+    "orders": [
+      143.14,
+      160.31,
+      19.11,
+      170.8
+    ]
+  },
+  {
+    "customer_id": 47,
+    "name": "Gregory Lopez",
+    "email": "kevin14@example.com",
+    "age": 60,
+    "city": "Susanhaven",
+    "is_premium": false,
+    "orders": [
+      179.11
+    ]
+  },
+  {
+    "customer_id": 48,
+    "name": "Edward Moreno",
+    "email": "nperry@example.com",
+    "age": 31,
+    "city": "Sextonmouth",
+    "is_premium": false,
+    "orders": [
+      15.24,
+      196.13,
+      192.33,
+      118.03
+    ]
+  },
+  {
+    "customer_id": 49,
+    "name": "Travis Jones",
+    "email": "steven38@example.org",
+    "age": 21,
+    "city": "Meganborough",
+    "is_premium": false,
+    "orders": [
+      15.17,
+      118.68
+    ]
+  },
+  {
+    "customer_id": 50,
+    "name": "Miss Krista Black",
+    "email": "qterry@example.net",
+    "age": 42,
+    "city": "North Kathleen",
+    "is_premium": true,
+    "orders": [
+      83.25
+    ]
+  },
+  {
+    "customer_id": 51,
+    "name": "Dawn Mills",
+    "email": "olsonjames@example.com",
+    "age": 37,
+    "city": "New Melissaborough",
+    "is_premium": true,
+    "orders": [
+      84.51
+    ]
+  },
+  {
+    "customer_id": 52,
+    "name": "Crystal Zimmerman",
+    "email": "mmartinez@example.com",
+    "age": 33,
+    "city": "West Peter",
+    "is_premium": false,
+    "orders": [
+      128.88,
+      181.87
+    ]
+  },
+  {
+    "customer_id": 53,
+    "name": "Elizabeth Schmidt",
+    "email": "patrick85@example.net",
+    "age": 35,
+    "city": "Amyhaven",
+    "is_premium": true,
+    "orders": [
+      167.57,
+      108.48,
+      175.61
+    ]
+  },
+  {
+    "customer_id": 54,
+    "name": "Anne Black",
+    "email": "oscarwagner@example.org",
+    "age": 20,
+    "city": "Cynthiabury",
+    "is_premium": false,
+    "orders": [
+      22.72,
+      109.68
+    ]
+  },
+  {
+    "customer_id": 55,
+    "name": "Amber Knox",
+    "email": "youngjoshua@example.net",
+    "age": 61,
+    "city": "North Robinton",
+    "is_premium": true,
+    "orders": [
+      131.39,
+      89.9
+    ]
+  },
+  {
+    "customer_id": 56,
+    "name": "Meghan Jackson",
+    "email": "steven54@example.net",
+    "age": 32,
+    "city": "Hannahmouth",
+    "is_premium": false,
+    "orders": [
+      66.59
+    ]
+  },
+  {
+    "customer_id": 57,
+    "name": "Derek Griffin",
+    "email": "zpatterson@example.net",
+    "age": 26,
+    "city": "Port Anthony",
+    "is_premium": true,
+    "orders": [
+      80.8,
+      121.49
+    ]
+  },
+  {
+    "customer_id": 58,
+    "name": "Mr. Tyler Farmer",
+    "email": "kelly38@example.com",
+    "age": 47,
+    "city": "Iantown",
+    "is_premium": true,
+    "orders": [
+      103.58,
+      62.97,
+      47.02,
+      183.75
+    ]
+  },
+  {
+    "customer_id": 59,
+    "name": "Alexandra Moreno",
+    "email": "cooknicholas@example.net",
+    "age": 32,
+    "city": "Montgomeryville",
+    "is_premium": false,
+    "orders": [
+      117.31
+    ]
+  },
+  {
+    "customer_id": 60,
+    "name": "Anthony White",
+    "email": "robertharvey@example.com",
+    "age": 27,
+    "city": "South Robertview",
+    "is_premium": true,
+    "orders": [
+      130.03
+    ]
+  },
+  {
+    "customer_id": 61,
+    "name": "Michael Hayes",
+    "email": "djones@example.com",
+    "age": 49,
+    "city": "North Timothy",
+    "is_premium": true,
+    "orders": [
+      103.94,
+      128.7,
+      22.75,
+      199.78
+    ]
+  },
+  {
+    "customer_id": 62,
+    "name": "Laura Rosales",
+    "email": "ynelson@example.net",
+    "age": 60,
+    "city": "South Kevin",
+    "is_premium": false,
+    "orders": [
+      126.07,
+      132.89,
+      127.16,
+      37.57
+    ]
+  },
+  {
+    "customer_id": 63,
+    "name": "Pamela Best",
+    "email": "simmonsmary@example.com",
+    "age": 39,
+    "city": "East Richard",
+    "is_premium": true,
+    "orders": [
+      76.87,
+      96.02,
+      56.2
+    ]
+  },
+  {
+    "customer_id": 64,
+    "name": "Barbara Holmes",
+    "email": "ujohnson@example.com",
+    "age": 63,
+    "city": "Lake Derek",
+    "is_premium": true,
+    "orders": [
+      199.38,
+      41.35,
+      34.63,
+      135.52
+    ]
+  },
+  {
+    "customer_id": 65,
+    "name": "April Williams",
+    "email": "rogersphillip@example.com",
+    "age": 25,
+    "city": "Mortonhaven",
+    "is_premium": false,
+    "orders": [
+      13.19
+    ]
+  },
+  {
+    "customer_id": 66,
+    "name": "Kiara Morgan",
+    "email": "qvance@example.com",
+    "age": 24,
+    "city": "Lake Michaelmouth",
+    "is_premium": true,
+    "orders": [
+      17.8,
+      73.46,
+      163.36,
+      82.43
+    ]
+  },
+  {
+    "customer_id": 67,
+    "name": "Lynn Simon",
+    "email": "danielsdeborah@example.com",
+    "age": 59,
+    "city": "East Jessica",
+    "is_premium": true,
+    "orders": [
+      75.11,
+      65.53,
+      186.93
+    ]
+  },
+  {
+    "customer_id": 68,
+    "name": "Sarah Williams",
+    "email": "cindy44@example.com",
+    "age": 21,
+    "city": "Jeremyfurt",
+    "is_premium": false,
+    "orders": [
+      98.21,
+      100.96,
+      91.56,
+      140.02
+    ]
+  },
+  {
+    "customer_id": 69,
+    "name": "Maria Bryant",
+    "email": "aaron98@example.org",
+    "age": 20,
+    "city": "Jacobton",
+    "is_premium": true,
+    "orders": [
+      89.54
+    ]
+  },
+  {
+    "customer_id": 70,
+    "name": "Michelle Thompson",
+    "email": "usmith@example.org",
+    "age": 39,
+    "city": "Leehaven",
+    "is_premium": false,
+    "orders": [
+      27.06,
+      183.62,
+      121.34,
+      125.34
+    ]
+  },
+  {
+    "customer_id": 71,
+    "name": "Kerri Jackson",
+    "email": "derek05@example.net",
+    "age": 52,
+    "city": "Lake Charlotte",
+    "is_premium": false,
+    "orders": [
+      135.83
+    ]
+  },
+  {
+    "customer_id": 72,
+    "name": "Luis Ross",
+    "email": "yedwards@example.org",
+    "age": 29,
+    "city": "Lopezmouth",
+    "is_premium": false,
+    "orders": [
+      82.83,
+      138.81,
+      193.93,
+      158.26
+    ]
+  },
+  {
+    "customer_id": 73,
+    "name": "David Kane",
+    "email": "wnelson@example.org",
+    "age": 57,
+    "city": "New Donnaland",
+    "is_premium": false,
+    "orders": [
+      146.48
+    ]
+  },
+  {
+    "customer_id": 74,
+    "name": "Troy Arias",
+    "email": "clogan@example.net",
+    "age": 49,
+    "city": "Debraland",
+    "is_premium": false,
+    "orders": [
+      127.37,
+      63.77
+    ]
+  },
+  {
+    "customer_id": 75,
+    "name": "Virginia Hall",
+    "email": "leahdiaz@example.org",
+    "age": 49,
+    "city": "West Jose",
+    "is_premium": false,
+    "orders": [
+      125.87,
+      136.05,
+      80.63
+    ]
+  },
+  {
+    "customer_id": 76,
+    "name": "Annette Patton",
+    "email": "myersrebecca@example.org",
+    "age": 43,
+    "city": "Wallchester",
+    "is_premium": false,
+    "orders": [
+      43.69,
+      174.68,
+      145.48,
+      87.08
+    ]
+  },
+  {
+    "customer_id": 77,
+    "name": "Kimberly Nunez",
+    "email": "candacebrown@example.com",
+    "age": 41,
+    "city": "Casefurt",
+    "is_premium": false,
+    "orders": [
+      57.76,
+      172.29,
+      58.78
+    ]
+  },
+  {
+    "customer_id": 78,
+    "name": "Ashley Nelson",
+    "email": "srocha@example.net",
+    "age": 37,
+    "city": "Nicholstown",
+    "is_premium": true,
+    "orders": [
+      42.4,
+      151.05,
+      60.2
+    ]
+  },
+  {
+    "customer_id": 79,
+    "name": "Jason Wright",
+    "email": "tpowers@example.net",
+    "age": 18,
+    "city": "Andersenshire",
+    "is_premium": true,
+    "orders": [
+      27.85,
+      181.6
+    ]
+  },
+  {
+    "customer_id": 80,
+    "name": "Charles Hensley",
+    "email": "jacksonwilliam@example.net",
+    "age": 57,
+    "city": "Stephanieport",
+    "is_premium": false,
+    "orders": [
+      156.01
+    ]
+  },
+  {
+    "customer_id": 81,
+    "name": "Mary Hernandez",
+    "email": "schwartzcharles@example.net",
+    "age": 43,
+    "city": "Port Douglas",
+    "is_premium": true,
+    "orders": [
+      100.64
+    ]
+  },
+  {
+    "customer_id": 82,
+    "name": "William Carpenter",
+    "email": "kayla63@example.org",
+    "age": 56,
+    "city": "Christopherland",
+    "is_premium": true,
+    "orders": [
+      22.53,
+      147.35,
+      47.73,
+      170.59
+    ]
+  },
+  {
+    "customer_id": 83,
+    "name": "Elizabeth Morgan",
+    "email": "danielle71@example.com",
+    "age": 29,
+    "city": "South Johnland",
+    "is_premium": false,
+    "orders": [
+      39.5,
+      138.69,
+      128.68,
+      108.17
+    ]
+  },
+  {
+    "customer_id": 84,
+    "name": "Samuel Irwin",
+    "email": "oharvey@example.org",
+    "age": 38,
+    "city": "New Noahhaven",
+    "is_premium": true,
+    "orders": [
+      155.54
+    ]
+  },
+  {
+    "customer_id": 85,
+    "name": "Kyle Reyes",
+    "email": "lisaodom@example.org",
+    "age": 28,
+    "city": "Cassandrahaven",
+    "is_premium": false,
+    "orders": [
+      80.36,
+      130.55,
+      35.4
+    ]
+  },
+  {
+    "customer_id": 86,
+    "name": "Nicholas Aguilar",
+    "email": "robert22@example.com",
+    "age": 47,
+    "city": "Fosterfort",
+    "is_premium": false,
+    "orders": [
+      82.13
+    ]
+  },
+  {
+    "customer_id": 87,
+    "name": "Wendy Obrien",
+    "email": "oreed@example.com",
+    "age": 32,
+    "city": "Perezchester",
+    "is_premium": true,
+    "orders": [
+      143.07
+    ]
+  },
+  {
+    "customer_id": 88,
+    "name": "Ann Bowman",
+    "email": "mrobinson@example.org",
+    "age": 64,
+    "city": "East Joycefort",
+    "is_premium": false,
+    "orders": [
+      159.82,
+      104.76,
+      142.11
+    ]
+  },
+  {
+    "customer_id": 89,
+    "name": "Christopher Webster",
+    "email": "woodsbrady@example.net",
+    "age": 31,
+    "city": "Lake Michael",
+    "is_premium": false,
+    "orders": [
+      107.7,
+      136.16,
+      170.95
+    ]
+  },
+  {
+    "customer_id": 90,
+    "name": "Jesus Harris",
+    "email": "jonesdebbie@example.com",
+    "age": 43,
+    "city": "Lake Danaburgh",
+    "is_premium": false,
+    "orders": [
+      28.31,
+      103.17
+    ]
+  },
+  {
+    "customer_id": 91,
+    "name": "Anthony Tanner",
+    "email": "heather07@example.org",
+    "age": 21,
+    "city": "Curtisside",
+    "is_premium": true,
+    "orders": [
+      115.53,
+      40.75,
+      159.91
+    ]
+  },
+  {
+    "customer_id": 92,
+    "name": "Juan Jones",
+    "email": "timothy96@example.com",
+    "age": 25,
+    "city": "Leetown",
+    "is_premium": false,
+    "orders": [
+      91.35,
+      196.78,
+      196.27
+    ]
+  },
+  {
+    "customer_id": 93,
+    "name": "Jamie Melendez",
+    "email": "kendrabruce@example.org",
+    "age": 36,
+    "city": "Katherinestad",
+    "is_premium": false,
+    "orders": [
+      45.17,
+      140.08
+    ]
+  },
+  {
+    "customer_id": 94,
+    "name": "Michael Salazar",
+    "email": "zachary59@example.net",
+    "age": 42,
+    "city": "Port Christopherstad",
+    "is_premium": true,
+    "orders": [
+      152.82
+    ]
+  },
+  {
+    "customer_id": 95,
+    "name": "Cassie Young",
+    "email": "clarkashley@example.net",
+    "age": 39,
+    "city": "Campbellbury",
+    "is_premium": true,
+    "orders": [
+      87.62,
+      105.07,
+      141.9,
+      99.43
+    ]
+  },
+  {
+    "customer_id": 96,
+    "name": "Catherine Cervantes",
+    "email": "steelekathy@example.org",
+    "age": 58,
+    "city": "Bonillahaven",
+    "is_premium": false,
+    "orders": [
+      140.96,
+      176.56,
+      61.4,
+      139.71
+    ]
+  },
+  {
+    "customer_id": 97,
+    "name": "Corey Howard Jr.",
+    "email": "bryantjeremy@example.net",
+    "age": 40,
+    "city": "East Timothy",
+    "is_premium": true,
+    "orders": [
+      76.72,
+      136.81,
+      147.42
+    ]
+  },
+  {
+    "customer_id": 98,
+    "name": "Matthew Russell",
+    "email": "kenneth03@example.org",
+    "age": 60,
+    "city": "East Kayla",
+    "is_premium": false,
+    "orders": [
+      37.72,
+      151.68,
+      76.95,
+      37.07
+    ]
+  },
+  {
+    "customer_id": 99,
+    "name": "Kelly Watson",
+    "email": "donna62@example.org",
+    "age": 56,
+    "city": "South Shawn",
+    "is_premium": true,
+    "orders": [
+      195.37,
+      118.87
+    ]
+  },
+  {
+    "customer_id": 100,
+    "name": "Michael Mayo",
+    "email": "sonyafoster@example.net",
+    "age": 57,
+    "city": "West Grant",
+    "is_premium": false,
+    "orders": [
+      78.3
+    ]
+  }
+]
