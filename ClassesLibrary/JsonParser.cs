@@ -13,63 +13,73 @@ namespace ClassesLibrary
         public static List<AppUser> ReadJson()
         {
             GetFilePath();
-            StreamReader jsonFile = new StreamReader(file_path);
-            var appUsers = new List<AppUser>(100);
-            if (CheckJsonCorrectness() == false)
+            int key = 0;
+            int value = 1;
+            while (CheckJsonCorrectness() != true)
             {
-                return appUsers;
+                Console.WriteLine("Incorrect file, try another path");
+                file_path = Console.ReadLine();
             }
+            StreamReader jsonFile = new StreamReader(file_path);
+            var appUsers = new List<AppUser>();
             string currentLine;
-            int currentUser = -1;
+            int currentUserIndex = -1;
             while((currentLine = jsonFile.ReadLine()) != null)
             {
-                currentUser++;
-
+                currentUserIndex++;
+                appUsers.Add(new AppUser());
                 while (currentLine.Trim(' ',',') != "}")
-                {
+                {                   
                     try
                     {
                         currentLine = jsonFile.ReadLine();
+                        if (currentLine == null)
+                        {
+                            appUsers.RemoveAt(appUsers.Count-1);
+                            break;
+                        }
+
                         string[] currentItem = currentLine.Trim(' ', ',').Replace("\"", "").Split(':');
-                        switch (currentItem[0])
+                        switch (currentItem[key])
                         {
                             case "customer_id":
-                                appUsers[currentUser].CustomerId = int.Parse(currentItem[1].Trim(' ', ','));
+                                appUsers[currentUserIndex].CustomerId = int.Parse(currentItem[value].Trim(' ', ','));
                                 break;
                             case "name":
-                                appUsers[currentUser].Name = currentItem[1];
+                                appUsers[currentUserIndex].Name = currentItem[value].Trim(' ');
                                 break;
                             case "email":
-                                appUsers[currentUser].Email = currentItem[1];
+                                appUsers[currentUserIndex].Email = currentItem[value].Trim(' ');
                                 break;
                             case "age":
-                                appUsers[currentUser].Age = int.Parse(currentItem[1].Trim(' ', ','));
+                                appUsers[currentUserIndex].Age = int.Parse(currentItem[value].Trim(' ', ','));
                                 break;
                             case "city":
-                                appUsers[currentUser].City = currentItem[1];
+                                appUsers[currentUserIndex].City = currentItem[value].Trim(' ');
                                 break;
                             case "is_premium":
-                                appUsers[currentUser].IsPremium = bool.Parse(currentItem[1].Trim(' ', ','));
+                                appUsers[currentUserIndex].IsPremium = bool.Parse(currentItem[value].Trim(' ', ','));
                                 break;
                             case "orders":
-                                if (currentItem[1].Trim() != "[")
+                                while ((currentLine = jsonFile.ReadLine().Trim().TrimEnd(',')) != "]")
                                 {
-                                    Console.WriteLine("No offers in order list");
-                                }
-                                else
-                                {
-                                    while ((currentLine = jsonFile.ReadLine().Trim()) != "]")
-                                    {
-                                        int currentOrder = 0;
-                                        appUsers[currentUser].Orders[currentOrder++] = double.Parse(currentItem[1].TrimEnd(',').Trim(' ').Replace('.', ','));
-                                    }
+                                    string currentOrder = currentLine.Trim(' ').TrimEnd(',').Replace('.',',');
+                                    appUsers[currentUserIndex].Orders.Add(double.Parse(currentOrder));
                                 }
                                 break;
-                        }
+                        }                               
                     }
-                    catch (ArgumentOutOfRangeException ex)
+                    catch (NullReferenceException ex)
                     {
-                        Console.WriteLine(ex.Message + " " + "in ReadJson");
+                        Console.WriteLine(currentUserIndex + " " + ex.Message + " " + "in ReadJson");
+                    }
+                    catch(ArgumentOutOfRangeException ex)
+                    {
+                       Console.WriteLine(currentUserIndex + " " + ex.Message + " " + "in ReadJson");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(currentUserIndex + " " + ex.Message + " " + "in ReadJson");
                     }
                 }
             }
@@ -93,7 +103,7 @@ namespace ClassesLibrary
             file_path = path;
         }
 
-        public static bool CheckJsonCorrectness()
+        private static bool CheckJsonCorrectness()
         {
             if (CheckUserDataCorrectness() == false)
             {
@@ -131,6 +141,8 @@ namespace ClassesLibrary
         private static bool CheckUserDataCorrectness()
         {
             StreamReader jsonFile = new StreamReader(file_path);
+            int key = 0;
+            int value = 1;
             string currentLine;
             while ((currentLine = jsonFile.ReadLine()) != null)
             {
@@ -147,52 +159,52 @@ namespace ClassesLibrary
                             }
                             string[] currentItem = currentLine.Split(':');
                             if (currentItem.Length == 0) return false;
-                            switch(currentItem[0])
+                            switch(currentItem[key])
                             {
                                 case "customer_id":
-                                    if (!int.TryParse(currentItem[1].Trim(), out int value1))
+                                    if (!int.TryParse(currentItem[value].Trim(), out int value1))
                                     {
                                         Console.WriteLine("Incorrect id");
                                         return false;
                                     }
                                     break;
                                 case "name":
-                                    if (!Regex.IsMatch(currentItem[1].Trim(), namePattern))
+                                    if (!Regex.IsMatch(currentItem[value].Trim(), namePattern))
                                     {
                                         Console.WriteLine("Incorrect name");
                                         return false;
                                     }
                                     break;
                                 case "email":
-                                    if (!Regex.IsMatch(currentItem[1].Trim(), emailPattern))
+                                    if (!Regex.IsMatch(currentItem[value].Trim(), emailPattern))
                                     {
                                         Console.WriteLine("Incorrect email");
                                         return false;
                                     }
                                     break;
                                 case "age":
-                                    if (!int.TryParse(currentItem[1].Trim(), out int value2))
+                                    if (!int.TryParse(currentItem[value].Trim(), out int value2))
                                     {
                                         Console.WriteLine("Incorrect age");
                                         return false;
                                     }
                                     break;
                                 case "city":
-                                    if (!Regex.IsMatch(currentItem[1].Trim(), cityPattern))
+                                    if (!Regex.IsMatch(currentItem[value].Trim(), cityPattern))
                                     {
                                         Console.WriteLine("Incorrect city");
                                         return false;
                                     }
                                     break;
                                 case "is_premium":
-                                    if (!bool.TryParse(currentItem[1].Trim(), out bool value3))
+                                    if (!bool.TryParse(currentItem[value].Trim(), out bool value3))
                                     {
                                         Console.WriteLine("Incorrect premium status");
                                         return false;
                                     }
                                     break;
                                 case "orders":
-                                    if (currentItem[1].Trim() != "[")
+                                    if (currentItem[value].Trim() != "[")
                                     {
                                         Console.WriteLine("No offers in order list");
                                         return false;

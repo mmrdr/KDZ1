@@ -24,7 +24,10 @@
         public bool IsPremium { get { return _is_premium; } set { _is_premium = value; } }
         public List<double> Orders { get { return _orders; } set { _orders = value; } }
 
-        public AppUser() { }
+        public AppUser()
+        {
+            Orders = new List<double>();
+        }
 
         /// <summary>
         /// constructor for fields initializing.
