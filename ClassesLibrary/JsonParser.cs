@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.IO.Pipes;
+using System.Text.RegularExpressions;
+using System.Threading.Channels;
 
 namespace ClassesLibrary
 {
@@ -84,6 +86,23 @@ namespace ClassesLibrary
                 }
             }
             return appUsers;
+        }
+
+        public static List<AppUser> ReadJsonFromConsole()
+        {
+            var appUsers = new List<AppUser>();
+            do
+            {
+                Console.WriteLine("Starting system...");
+                FillAppUsersFields(appUsers);
+                Console.WriteLine("Data uploaded successfully");
+                Thread.Sleep(1000);
+                Console.Clear();
+                Console.WriteLine("If you want to fill another user press ENTER\n" +
+                    "Else any another input");
+
+            } while (Console.ReadKey().Key == ConsoleKey.Enter);
+            return appUsers;           
         }
 
         public static void WriteJson()
@@ -233,6 +252,142 @@ namespace ClassesLibrary
                 }
             }
             return true;
+        }
+
+        private static void FillAppUsersFields(List<AppUser> appUsers)
+        {
+            Console.WriteLine("Do you want to input data for user?[y/n]");
+            var answer = Console.ReadKey().Key;
+            while (answer != ConsoleKey.Y && answer != ConsoleKey.N)
+            {
+                Console.WriteLine("Incorrect answer, try again[y,n]");
+                answer = Console.ReadKey().Key;
+            }
+            if (answer == ConsoleKey.Y)
+            {
+                Console.Clear();
+                appUsers.Add(new AppUser());
+                Console.WriteLine($"Now you are filling the {appUsers[appUsers.Count - 1]}");               
+                while (appUsers[appUsers.Count - 1].CustomerId == 0 || appUsers[appUsers.Count - 1].Name == null || appUsers[appUsers.Count - 1].Email == null 
+                    || appUsers[appUsers.Count - 1].Age == 0 || appUsers[appUsers.Count - 1].City == null || appUsers[appUsers.Count - 1].Orders.Count == 0)
+                {
+                    Console.Clear();
+                    FillDataFromConsoleMenu();
+                    var key = Console.ReadKey().Key;
+                    switch (key)
+                    {
+                        case ConsoleKey.D1:
+                            Console.Clear();
+                            Console.Write("Input id: ");
+                            string n1 = Console.ReadLine();
+                            while (!int.TryParse(n1, out int x) || n1 == null || String.IsNullOrEmpty(n1) || int.Parse(n1) < 0 || int.Parse(n1) > int.MaxValue)
+                            {
+                                Console.WriteLine("Incorrect id, try again");
+                                Console.Write("Input id: ");
+                                n1 = Console.ReadLine();
+                            }
+                            appUsers[appUsers.Count - 1].CustomerId = int.Parse(n1);
+                            break;
+                        case ConsoleKey.D2:
+                            Console.Clear();
+                            Console.WriteLine("Input name: ");
+                            string n2 = Console.ReadLine();
+                            while(!Regex.IsMatch(n2, namePattern) || n2 == null || String.IsNullOrEmpty(n2))
+                            {
+                                Console.WriteLine("Incorrect name, try again");
+                                Console.Write("Input name: ");
+                                n2 = Console.ReadLine();
+                            }
+                            appUsers[appUsers.Count - 1].Name = n2;
+                            break;
+                        case ConsoleKey.D3:
+                            Console.Clear();
+                            Console.WriteLine("Input email: ");
+                            string n3 = Console.ReadLine();
+                            while(!Regex.IsMatch(n3, emailPattern) || n3 == null || String.IsNullOrEmpty(n3))
+                            {
+                                Console.WriteLine("Incorrect email, try again");
+                                Console.Write("Input email: ");
+                                n3 = Console.ReadLine();
+                            }
+                            appUsers[appUsers.Count - 1].Email = n3;
+                            break;
+                        case ConsoleKey.D4:
+                            Console.Clear();
+                            Console.WriteLine("Input age: ");
+                            string n4 = Console.ReadLine();
+                            while (!int.TryParse(n4, out int y) || n4 == null || String.IsNullOrEmpty(n4) || int.Parse(n4) < 0|| int.Parse(n4) > int.MaxValue)
+                            {
+                                Console.WriteLine("Incorrect age, try again");
+                                Console.Write("Input age: ");
+                                n4 = Console.ReadLine();
+                            }
+                            appUsers[appUsers.Count - 1].Age = int.Parse(n4);                           
+                            break;
+                        case ConsoleKey.D5:
+                            Console.Clear();
+                            Console.WriteLine("Input city: ");
+                            string n5 = Console.ReadLine();
+                            while(!Regex.IsMatch(n5, cityPattern) || n5 == null || String.IsNullOrEmpty(n5))
+                            {
+                                Console.WriteLine("Incorrect city, try again");
+                                Console.Write("Input city: ");
+                                n5 = Console.ReadLine();
+                            }
+                            appUsers[appUsers.Count - 1].City = n5;
+                            break;
+                        case ConsoleKey.D6:
+                            Console.Clear();
+                            Console.WriteLine("Input premium status[true/false]: ");
+                            string n6 = Console.ReadLine();
+                            while (!bool.TryParse(n6, out bool z) || n6 == null || String.IsNullOrEmpty(n6))
+                            {
+                                Console.WriteLine("Incorrect premium status, try again");
+                                Console.Write("Input premium status: ");
+                                n6 = Console.ReadLine();
+                            }
+                            appUsers[appUsers.Count - 1].IsPremium = bool.Parse(n6);
+                            break;
+                        case ConsoleKey.D7:
+                            Console.Clear();
+                            Console.Write("Input all orders, input \":\" between them(dou,ble1:dou,ble2:dou,ble3 .. :dou,bleN)");
+                            Console.WriteLine();
+                            string doubles = Console.ReadLine().Replace('.', ',');
+                            string[] doublesArr = doubles.Split(':');
+                            for (int i = 0; i < doublesArr.Length; i++)
+                            {
+                                appUsers[appUsers.Count - 1].Orders.Add(double.Parse(doublesArr[i]));
+                            }                           
+                            break;
+                        default:
+                            Console.Clear();
+                            Console.WriteLine("Incorrect input");
+                            Thread.Sleep(1000);
+                            break;
+                    }
+                }
+            }
+            if (answer == ConsoleKey.N)
+            {
+                Console.Clear();
+                Console.WriteLine("Filling data is over");
+                Thread.Sleep(1000);
+            }
+        }
+
+        private static void FillDataFromConsoleMenu()
+        {
+            Console.WriteLine("You are filling data now ");
+            Console.WriteLine("You can input data about:\n" +
+                "But you should input ALL data\n" +
+                "1. \"customer_id\"\n" +
+                "2. \"name\"\n" +
+                "3. \"email\"\n" +
+                "4. \"age\"\n" +
+                "5. \"city\"\n" +
+                "6. \"is_premium\" status\n" +
+                "7. \"orders\"");
+            Console.Write("What you want to fill: ");
         }
     }
 }
