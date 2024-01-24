@@ -16,13 +16,13 @@
         /// <summary>
         /// Properties for interacting with class fields.
         /// </summary>
-        public int CustomerId { get { return _customer_id; } }
-        public string Name { get { return _name; } } 
-        public string Email { get { return _email; } }
-        public int Age { get { return _age; } }
-        public string City { get { return _city; } }
-        public bool IsPremium { get { return _is_premium; } }
-        public List<double> Orders { get { return _orders; } }
+        public int CustomerId { get { return _customer_id; } set { _customer_id = value; } }
+        public string Name { get { return _name; } set { _name = value; } } 
+        public string Email { get { return _email; } set { _email = value; } }
+        public int Age { get { return _age; } set { _age = value; } }
+        public string City { get { return _city; } set { _city = value; } }
+        public bool IsPremium { get { return _is_premium; } set { _is_premium = value; } }
+        public List<double> Orders { get { return _orders; } set { _orders = value; } }
 
         public AppUser() { }
 
