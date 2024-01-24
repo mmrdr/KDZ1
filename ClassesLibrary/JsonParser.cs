@@ -93,6 +93,7 @@ namespace ClassesLibrary
             var appUsers = new List<AppUser>();
             do
             {
+                Console.Clear();
                 Console.WriteLine("Starting system...");
                 FillAppUsersFields(appUsers);
                 Console.WriteLine("Data uploaded successfully");
