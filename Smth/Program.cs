@@ -10,22 +10,28 @@ namespace Smth
             {
                 do
                 {
+                    
                     Menu.StartComputer();
                     Console.WriteLine();
-                    Console.WriteLine("Do you want to start app again?[y,n]");
+                    Console.Clear();
+                    HelpingMethods.PrintWithColor("Do you want to start app again?[y,n]", ConsoleColor.Yellow);
                 } while (Console.ReadKey().Key != ConsoleKey.N);
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                Console.WriteLine(ex.Message);
+                HelpingMethods.PrintWithColor(ex.Message, ConsoleColor.Red);
             }
             catch (NullReferenceException ex)
             {
-                Console.WriteLine(ex.Message);
+                HelpingMethods.PrintWithColor(ex.Message, ConsoleColor.Red);
             }
             catch (ArgumentNullException ex)
             {
-                Console.WriteLine(ex.Message);
+                HelpingMethods.PrintWithColor(ex.Message, ConsoleColor.Red);
+            }
+            catch (Exception ex)
+            {
+                HelpingMethods.PrintWithColor(ex.Message, ConsoleColor.Red);
             }
         }
     }

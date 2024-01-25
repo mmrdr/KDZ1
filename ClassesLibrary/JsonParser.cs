@@ -11,7 +11,7 @@ namespace ClassesLibrary
             int value = 1;
             while (!HelpingMethods.CheckJsonCorrectness())
             {
-                Console.WriteLine("Incorrect file, try another path");
+                HelpingMethods.PrintWithColor("Incorrect file, try another path", ConsoleColor.Red);
                 HelpingMethods.file_path = Console.ReadLine();
             }
             StreamReader jsonFile = new StreamReader(HelpingMethods.file_path);
@@ -65,15 +65,15 @@ namespace ClassesLibrary
                     }
                     catch (NullReferenceException ex)
                     {
-                        Console.WriteLine(currentUserIndex + " " + ex.Message + " " + "in ReadJson");
+                        HelpingMethods.PrintWithColor(currentUserIndex + " " + ex.Message + " " + "in ReadJson", ConsoleColor.Red);
                     }
                     catch(ArgumentOutOfRangeException ex)
                     {
-                       Console.WriteLine(currentUserIndex + " " + ex.Message + " " + "in ReadJson");
+                       HelpingMethods.PrintWithColor(currentUserIndex + " " + ex.Message + " " + "in ReadJson", ConsoleColor.Red);
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(currentUserIndex + " " + ex.Message + " " + "in ReadJson");
+                        HelpingMethods.PrintWithColor(currentUserIndex + " " + ex.Message + " " + "in ReadJson", ConsoleColor.Red);
                     }
                 }
             }
@@ -157,7 +157,7 @@ namespace ClassesLibrary
             string json = WriteJsonToConsole(HelpingMethods.currentAppUsers);
             if (json == null)
             {
-                Console.WriteLine("No json file at this moment");
+                HelpingMethods.PrintWithColor("No json file at this moment", ConsoleColor.Red);
             }
             else
             {
@@ -177,7 +177,7 @@ namespace ClassesLibrary
             string json = WriteJsonToConsole(HelpingMethods.currentAppUsers);
             if (json == null)
             {
-                Console.WriteLine("No json file at this moment");
+                HelpingMethods.PrintWithColor("No json file at this moment", ConsoleColor.Red);
             }
             else
             {

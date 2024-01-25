@@ -11,7 +11,7 @@ namespace ClassesLibrary
         public static void StartComputer()
         {
             Console.WriteLine();
-            Console.WriteLine("Press SPACEBAR to start app");
+            HelpingMethods.PrintWithColor("Press SPACEBAR to start app", ConsoleColor.Yellow);
             var vkl = Console.ReadKey().Key;
             if (vkl == ConsoleKey.Spacebar)
             {
@@ -25,52 +25,43 @@ namespace ClassesLibrary
             }
         }
 
-        private static void ShowMenu()
-        {
-            Console.WriteLine("1. Take data from file(you need to input path)\n" +
-                "2. Enter data manually\n" +
-                "3. Perform selection\n" +
-                "4. Perform sorting\n" +
-                "5. Output current Json file\n" +
-                "6. Write data to the file(you need to input path)\n" +
-                "7. Exit");
-        }
-
         private static void BeginAction()
         {
             do
             {
-                ShowMenu();
+                HelpingMethods.ShowMenu();
                 Console.CursorVisible = false;
                 switch (HelpingMethods.Item())
                 {
                     case ConsoleKey.D1:
                         Console.Clear();
                         JsonParser.ReadJson();
-                        Console.WriteLine("Data loaded");
+                        HelpingMethods.PrintWithColor("Data loaded",ConsoleColor.Green);
                         Thread.Sleep(1000);
                         break;
                     case ConsoleKey.D2:
                         Console.Clear();
                         JsonParser.ReadJsonFromConsole();
-                        Console.WriteLine("Data loaded");
+                        HelpingMethods.PrintWithColor("Data loaded", ConsoleColor.Green);
                         Thread.Sleep(1000);
                         break;
                     case ConsoleKey.D3:
                         Console.Clear();
                         DataProcessing.Selecting();
-                        Console.WriteLine("Complete!");
+                        HelpingMethods.PrintWithColor("Complete!", ConsoleColor.Green);
                         Thread.Sleep(1000);
                         break;
                     case ConsoleKey.D4:
                         Console.Clear();
                         HelpingMethods.SortChoose();
-                        Console.WriteLine("Complete!");
+                        HelpingMethods.PrintWithColor("Complete!", ConsoleColor.Green);
                         Thread.Sleep(1000);
                         break;
                     case ConsoleKey.D5:
                         Console.Clear();
                         JsonParser.WriteJsonToConsole(HelpingMethods.currentAppUsers);
+                        Thread.Sleep(2000);
+                        HelpingMethods.PrintWithColor("Stop looking at file :(", ConsoleColor.DarkRed);
                         Thread.Sleep(1000);
                         break;
                     case ConsoleKey.D6:
@@ -79,11 +70,13 @@ namespace ClassesLibrary
                         break;
                     case ConsoleKey.D7:
                         Console.Clear();
-                        Console.WriteLine("Do you really want it? :(");
+                        HelpingMethods.PrintWithColor("DO YOU REALLY WANT IT? :(", ConsoleColor.DarkRed);
+                        Thread.Sleep(1000);
                         break;
                 }
-                Console.WriteLine("To EXIT press 7\n" +
-                    "If you want to turn to menu, any other input");
+                Console.Clear();
+                HelpingMethods.PrintWithColor("To EXIT press 7\n" +
+                    "If you want to turn to menu, any other input", ConsoleColor.Blue);
             } while (Console.ReadKey().Key != ConsoleKey.D7);
         }
     }

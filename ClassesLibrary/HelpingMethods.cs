@@ -15,7 +15,7 @@ namespace ClassesLibrary
             string path = Console.ReadLine();
             while (!File.Exists(path) || String.IsNullOrEmpty(path) || path.IndexOfAny(Path.GetInvalidPathChars()) != -1)
             {
-                Console.WriteLine("Wrong file path, try again");
+                PrintWithColor("Wrong file path, try again", ConsoleColor.Red);
                 path = Console.ReadLine();
             }
             file_path = path;
@@ -47,7 +47,7 @@ namespace ClassesLibrary
             }
             if (valueForJsonCheck != 1)
             {
-                Console.WriteLine("Incorrect structure of brackets");
+                HelpingMethods.PrintWithColor("Incorrect structure of brackets", ConsoleColor.Red);
                 return false;
             }
             return true;
@@ -79,49 +79,49 @@ namespace ClassesLibrary
                                 case "customer_id":
                                     if (!int.TryParse(currentItem[value].Trim(), out int value1))
                                     {
-                                        Console.WriteLine("Incorrect id");
+                                        PrintWithColor("Incorrect id", ConsoleColor.Red);
                                         return false;
                                     }
                                     break;
                                 case "name":
                                     if (!Regex.IsMatch(currentItem[value].Trim(), namePattern))
                                     {
-                                        Console.WriteLine("Incorrect name");
+                                        PrintWithColor("Incorrect name", ConsoleColor.Red);
                                         return false;
                                     }
                                     break;
                                 case "email":
                                     if (!Regex.IsMatch(currentItem[value].Trim(), emailPattern))
                                     {
-                                        Console.WriteLine("Incorrect email");
+                                        PrintWithColor("Incorrect email", ConsoleColor.Red);
                                         return false;
                                     }
                                     break;
                                 case "age":
                                     if (!int.TryParse(currentItem[value].Trim(), out int value2))
                                     {
-                                        Console.WriteLine("Incorrect age");
+                                        PrintWithColor("Incorrect age", ConsoleColor.Red);
                                         return false;
                                     }
                                     break;
                                 case "city":
                                     if (!Regex.IsMatch(currentItem[value].Trim(), cityPattern))
                                     {
-                                        Console.WriteLine("Incorrect city");
+                                        PrintWithColor("Incorrect city", ConsoleColor.Red);
                                         return false;
                                     }
                                     break;
                                 case "is_premium":
                                     if (!bool.TryParse(currentItem[value].Trim().Replace('T','t').Replace('F','f'), out bool value3))
                                     {
-                                        Console.WriteLine("Incorrect premium status");
+                                        PrintWithColor("Incorrect premium status", ConsoleColor.Red);
                                         return false;
                                     }
                                     break;
                                 case "orders":
                                     if (currentItem[value].Trim() != "[")
                                     {
-                                        Console.WriteLine("No offers in order list");
+                                        PrintWithColor("No offers in order list", ConsoleColor.Red);
                                         return false;
                                     }
                                     else
@@ -130,7 +130,7 @@ namespace ClassesLibrary
                                         {
                                             if (!double.TryParse(currentLine.TrimEnd(',').Trim().Replace('.', ','), out double value4))
                                             {
-                                                Console.WriteLine("Incorrect price");
+                                                HelpingMethods.PrintWithColor("Incorrect price", ConsoleColor.Red);
                                                 return false;
                                             }
                                         }
@@ -142,7 +142,7 @@ namespace ClassesLibrary
                         }
                         catch (ArgumentOutOfRangeException ex)
                         {
-                            Console.WriteLine(ex.Message + " " + "in CheckUserDataCorrectness");
+                            PrintWithColor(ex.Message + " " + "in CheckUserDataCorrectness", ConsoleColor.Red);
                         }
                     }
                 }
@@ -156,7 +156,7 @@ namespace ClassesLibrary
             var answer = Console.ReadKey().Key;
             while (answer != ConsoleKey.Y && answer != ConsoleKey.N)
             {
-                Console.WriteLine("Incorrect answer, try again[y,n]");
+                PrintWithColor("Incorrect answer, try again[y,n]", ConsoleColor.Red);
                 answer = Console.ReadKey().Key;
             }
             if (answer == ConsoleKey.Y)
@@ -178,7 +178,7 @@ namespace ClassesLibrary
                             string n1 = Console.ReadLine();
                             while (!int.TryParse(n1, out int x) || n1 == null || String.IsNullOrEmpty(n1) || int.Parse(n1) < 0 || int.Parse(n1) > int.MaxValue)
                             {
-                                Console.WriteLine("Incorrect id, try again");
+                                PrintWithColor("Incorrect id, try again", ConsoleColor.Red);
                                 Console.Write("Input id: ");
                                 n1 = Console.ReadLine();
                             }
@@ -190,7 +190,7 @@ namespace ClassesLibrary
                             string n2 = Console.ReadLine();
                             while (!Regex.IsMatch(n2, namePattern) || n2 == null || String.IsNullOrEmpty(n2))
                             {
-                                Console.WriteLine("Incorrect name, try again");
+                                PrintWithColor("Incorrect name, try again", ConsoleColor.Red);
                                 Console.Write("Input name: ");
                                 n2 = Console.ReadLine();
                             }
@@ -202,7 +202,7 @@ namespace ClassesLibrary
                             string n3 = Console.ReadLine();
                             while (!Regex.IsMatch(n3, emailPattern) || n3 == null || String.IsNullOrEmpty(n3))
                             {
-                                Console.WriteLine("Incorrect email, try again");
+                                PrintWithColor("Incorrect email, try again", ConsoleColor.Red);
                                 Console.Write("Input email: ");
                                 n3 = Console.ReadLine();
                             }
@@ -214,7 +214,7 @@ namespace ClassesLibrary
                             string n4 = Console.ReadLine();
                             while (!int.TryParse(n4, out int y) || n4 == null || String.IsNullOrEmpty(n4) || int.Parse(n4) < 0 || int.Parse(n4) > int.MaxValue)
                             {
-                                Console.WriteLine("Incorrect age, try again");
+                                PrintWithColor("Incorrect age, try again", ConsoleColor.Red);
                                 Console.Write("Input age: ");
                                 n4 = Console.ReadLine();
                             }
@@ -226,7 +226,7 @@ namespace ClassesLibrary
                             string n5 = Console.ReadLine();
                             while (!Regex.IsMatch(n5, cityPattern) || n5 == null || String.IsNullOrEmpty(n5))
                             {
-                                Console.WriteLine("Incorrect city, try again");
+                                PrintWithColor("Incorrect city, try again", ConsoleColor.Red);
                                 Console.Write("Input city: ");
                                 n5 = Console.ReadLine();
                             }
@@ -238,7 +238,7 @@ namespace ClassesLibrary
                             string n6 = Console.ReadLine();
                             while (!bool.TryParse(n6, out bool z) || n6 == null || String.IsNullOrEmpty(n6))
                             {
-                                Console.WriteLine("Incorrect premium status, try again");
+                                PrintWithColor("Incorrect premium status, try again", ConsoleColor.Red);
                                 Console.Write("Input premium status: ");
                                 n6 = Console.ReadLine();
                             }
@@ -250,7 +250,7 @@ namespace ClassesLibrary
                             string doubles = Console.ReadLine().Replace('.', ',');
                             while (!Regex.IsMatch(doubles, doublesPattern))
                             {
-                                Console.WriteLine("Incorrect doubles, try again");
+                                PrintWithColor("Incorrect doubles, try again", ConsoleColor.Red);
                                 Console.WriteLine("Input all orders, input \":\" between them(dou,ble1:dou,ble2:dou,ble3 .. :dou,bleN)");
                                 doubles = Console.ReadLine().Replace('.', ',');
                             }
@@ -262,7 +262,7 @@ namespace ClassesLibrary
                             break;
                         default:
                             Console.Clear();
-                            Console.WriteLine("Incorrect input");
+                            PrintWithColor("Incorrect input", ConsoleColor.Red);
                             Thread.Sleep(1000);
                             break;
                     }
@@ -276,32 +276,6 @@ namespace ClassesLibrary
             }
         }
 
-        internal static void FillDataFromConsoleMenu()
-        {
-            Console.WriteLine("You are filling data now ");
-            Console.WriteLine("You can input data about:\n" +
-                "But you should input ALL data\n" +
-                "1. \"customer_id\"\n" +
-                "2. \"name\"\n" +
-                "3. \"email\"\n" +
-                "4. \"age\"\n" +
-                "5. \"city\"\n" +
-                "6. \"is_premium\" status\n" +
-                "7. \"orders\"");
-            Console.Write("What you want to fill: ");
-        }
-
-        internal static void SelectionSortingMenu()
-        {
-            Console.WriteLine("1. Customer id\n" +
-                "2. Name\n" +
-                "3. Email\n" +
-                "4. Age\n" +
-                "5. City\n" +
-                "6. Premium status\n" +
-                "7. Orders");
-        }
-
         internal static ConsoleKey Item()
         {
             var key = Console.ReadKey().Key;
@@ -309,17 +283,10 @@ namespace ClassesLibrary
                 && key != ConsoleKey.D5 && key != ConsoleKey.D6 && key != ConsoleKey.D7)
             {
                 Console.WriteLine();
-                Console.Write("Incorrect input, try again: ");
+                PrintWithColor("Incorrect input, try again: ", ConsoleColor.Red);
                 key = Console.ReadKey().Key;
             }
             return key;
-        }
-
-        internal static void Welcoming()
-        {
-            Console.WriteLine("Which field will be selectered: ");
-            HelpingMethods.SelectionSortingMenu();
-            Console.CursorVisible = false;
         }
 
         internal static void WriteChoose()
@@ -330,7 +297,7 @@ namespace ClassesLibrary
             var key = Console.ReadKey().Key;
             while (key != ConsoleKey.D1 && key != ConsoleKey.D2)
             {
-                Console.Write("Incorrect input, try again: ");
+                PrintWithColor("Incorrect input, try again: ", ConsoleColor.Red);
                 key = Console.ReadKey().Key;
             }
             switch (key)
@@ -354,7 +321,7 @@ namespace ClassesLibrary
             var key = Console.ReadKey().Key;
             while (key != ConsoleKey.D1 && key != ConsoleKey.D2)
             {
-                Console.Write("Incorrect input, try again: ");
+                PrintWithColor("Incorrect input, try again: ", ConsoleColor.Red);
                 key = Console.ReadKey().Key;
             }
             switch (key)

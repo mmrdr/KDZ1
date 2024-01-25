@@ -5,11 +5,11 @@ namespace ClassesLibrary
     {
         internal static List<AppUser> SelectedAppUsers;
 
-        public static List<AppUser> Selecting()
+        public static List<AppUser> Selecting() 
         {
             if (HelpingMethods.currentAppUsers == null)
             {
-                Console.WriteLine("No data error, try again");
+                HelpingMethods.PrintWithColor("No data error, try again", ConsoleColor.Red);
                 return new List<AppUser>(0);
             }
             HelpingMethods.Welcoming();
@@ -22,7 +22,7 @@ namespace ClassesLibrary
                     string n1 = Console.ReadLine();                  
                     while (n1 == null || String.IsNullOrEmpty(n1) || !int.TryParse(n1, out int x1))
                     {
-                        Console.WriteLine("Incorrect value, try again");
+                        HelpingMethods.PrintWithColor("Incorrect value, try again", ConsoleColor.Red);
                         Console.Write("Input value for selecting: ");
                         n1 = Console.ReadLine();
                     }
@@ -40,7 +40,7 @@ namespace ClassesLibrary
                     string n2 = Console.ReadLine();                  
                     while (n2 == null || String.IsNullOrEmpty(n2))
                     {
-                        Console.WriteLine("Incorrect value, try again");
+                        HelpingMethods.PrintWithColor("Incorrect value, try again", ConsoleColor.Red);
                         Console.Write("Input value for selecting: ");
                         n2 = Console.ReadLine();
                     }
@@ -59,7 +59,7 @@ namespace ClassesLibrary
                     
                     while (n3 == null || String.IsNullOrEmpty(n3))
                     {
-                        Console.WriteLine("Incorrect value, try again");
+                        HelpingMethods.PrintWithColor("Incorrect value, try again", ConsoleColor.Red);
                         Console.Write("Input value for selecting: ");
                         n3 = Console.ReadLine();
                     }
@@ -97,7 +97,7 @@ namespace ClassesLibrary
                     
                     while (n5 == null || String.IsNullOrEmpty(n5))
                     {
-                        Console.WriteLine("Incorrect value, try again");
+                        HelpingMethods.PrintWithColor("Incorrect value, try again", ConsoleColor.Red);
                         Console.Write("Input value for selecting: ");
                         n5 = Console.ReadLine();
                     }
@@ -116,7 +116,7 @@ namespace ClassesLibrary
                     
                     while (n6 == null || String.IsNullOrEmpty(n6) || !bool.TryParse(n6, out bool z))
                     {
-                        Console.WriteLine("Incorrect value, try again");
+                        HelpingMethods.PrintWithColor("Incorrect value, try again", ConsoleColor.Red);
                         Console.Write("Input value for selecting: ");
                         n6 = Console.ReadLine();
                     }
@@ -135,7 +135,7 @@ namespace ClassesLibrary
                     
                     while (n7 == null || String.IsNullOrEmpty(n7) || !double.TryParse(n7, out double k))
                     {
-                        Console.WriteLine("Incorrect value, try again");
+                        HelpingMethods.PrintWithColor("Incorrect value, try again", ConsoleColor.Red);
                         Console.Write("Input value for selecting: ");
                         n7 = Console.ReadLine();
                     }
@@ -153,7 +153,7 @@ namespace ClassesLibrary
             }
             if (SelectedAppUsers.Count == 0)
             {
-                Console.WriteLine("Nothing was found");
+                HelpingMethods.PrintWithColor("Nothing was found", ConsoleColor.Red);
                 return new List<AppUser>(0);
             }
             HelpingMethods.currentAppUsers = SelectedAppUsers;
@@ -164,7 +164,7 @@ namespace ClassesLibrary
         {           
             if (HelpingMethods.currentAppUsers == null)
             {
-                Console.WriteLine("No data error, try again");
+                HelpingMethods.PrintWithColor("No data error, try again", ConsoleColor.Red);
                 return new List<AppUser>(0);
             }
             HelpingMethods.Welcoming();
