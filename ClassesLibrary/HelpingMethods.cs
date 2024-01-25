@@ -112,7 +112,7 @@ namespace ClassesLibrary
                                     }
                                     break;
                                 case "is_premium":
-                                    if (!bool.TryParse(currentItem[value].Trim(), out bool value3))
+                                    if (!bool.TryParse(currentItem[value].Trim().Replace('T','t').Replace('F','f'), out bool value3))
                                     {
                                         Console.WriteLine("Incorrect premium status");
                                         return false;
@@ -308,8 +308,8 @@ namespace ClassesLibrary
             while (key != ConsoleKey.D1 && key != ConsoleKey.D2 && key != ConsoleKey.D3 && key != ConsoleKey.D4
                 && key != ConsoleKey.D5 && key != ConsoleKey.D6 && key != ConsoleKey.D7)
             {
-                Console.WriteLine("Incorrect input, try again");
-                Console.Write("Which field will be selectered: ");
+                Console.WriteLine();
+                Console.Write("Incorrect input, try again: ");
                 key = Console.ReadKey().Key;
             }
             return key;
@@ -320,6 +320,55 @@ namespace ClassesLibrary
             Console.WriteLine("Which field will be selectered: ");
             HelpingMethods.SelectionSortingMenu();
             Console.CursorVisible = false;
+        }
+
+        internal static void WriteChoose()
+        {
+            Console.WriteLine("You want create new file or overwrite current?");
+            Console.WriteLine("1. Create new\n" +
+                "2. Overwrite current\n");
+            var key = Console.ReadKey().Key;
+            while (key != ConsoleKey.D1 && key != ConsoleKey.D2)
+            {
+                Console.Write("Incorrect input, try again: ");
+                key = Console.ReadKey().Key;
+            }
+            switch (key)
+            {
+                case ConsoleKey.D1:
+                    Console.Clear();
+                    JsonParser.CreateNewJsonFile();
+                    break;
+                case ConsoleKey.D2:
+                    Console.Clear();
+                    JsonParser.WriteJsonToFile();
+                    break;
+            }
+        }
+
+        internal static void SortChoose()
+        {
+            Console.WriteLine("You want usual sorting or reverse sorting?");
+            Console.WriteLine("1. Usual sorting\n" +
+                "2. Reverse sorting\n");
+            var key = Console.ReadKey().Key;
+            while (key != ConsoleKey.D1 && key != ConsoleKey.D2)
+            {
+                Console.Write("Incorrect input, try again: ");
+                key = Console.ReadKey().Key;
+            }
+            switch (key)
+            {
+                case ConsoleKey.D1:
+                    Console.Clear();
+                    DataProcessing.Sorting();
+                    break;
+                case ConsoleKey.D2:
+                    Console.Clear();
+                    DataProcessing.Sorting();
+                    DataProcessing.SelectedAppUsers.Reverse();
+                    break;
+            }
         }
     }
 }

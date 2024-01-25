@@ -7,6 +7,11 @@ namespace ClassesLibrary
 
         public static List<AppUser> Selecting()
         {
+            if (HelpingMethods.currentAppUsers == null)
+            {
+                Console.WriteLine("No data error, try again");
+                return new List<AppUser>(0);
+            }
             HelpingMethods.Welcoming();
             SelectedAppUsers = new List<AppUser>();
             switch (HelpingMethods.Item())
@@ -151,11 +156,17 @@ namespace ClassesLibrary
                 Console.WriteLine("Nothing was found");
                 return new List<AppUser>(0);
             }
+            HelpingMethods.currentAppUsers = SelectedAppUsers;
             return SelectedAppUsers;
         }
 
         public static List<AppUser> Sorting()
-        {
+        {           
+            if (HelpingMethods.currentAppUsers == null)
+            {
+                Console.WriteLine("No data error, try again");
+                return new List<AppUser>(0);
+            }
             HelpingMethods.Welcoming();
             var tempSelectedUsers = new AppUser[HelpingMethods.currentAppUsers.Count()];
             switch (HelpingMethods.Item())
@@ -194,6 +205,7 @@ namespace ClassesLibrary
             {
                 SelectedAppUsers.Add(user);
             }
+            HelpingMethods.currentAppUsers = SelectedAppUsers;
             return SelectedAppUsers;
         }
     }

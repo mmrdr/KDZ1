@@ -52,7 +52,7 @@ namespace ClassesLibrary
                                 appUsers[currentUserIndex].City = currentItem[value].Trim(' ');
                                 break;
                             case "is_premium":
-                                appUsers[currentUserIndex].IsPremium = bool.Parse(currentItem[value].Trim(' ', ','));
+                                appUsers[currentUserIndex].IsPremium = bool.Parse(currentItem[value].Trim(' ', ',').Replace('T','t').Replace('F','f'));
                                 break;
                             case "orders":
                                 while ((currentLine = jsonFile.ReadLine().Trim().TrimEnd(',')) != "]")
@@ -100,9 +100,14 @@ namespace ClassesLibrary
             return appUsers;           
         }
 
-        public static void WriteJson(List<AppUser> appUsers)
+        public static string WriteJsonToConsole(List<AppUser> appUsers)
         {
-            if (appUsers.Count != 0)
+            if (HelpingMethods.currentAppUsers == null)
+            {
+                Console.WriteLine("No json file at this moment");
+                return String.Empty;
+            }
+            else
             {
                 string tab = HelpingMethods.TAB;
                 string JsonFileView = String.Empty;
@@ -112,12 +117,12 @@ namespace ClassesLibrary
                     AppUser appUser = appUsers[i];
                     JsonFileView += $"{tab}{{\n";
                     tab += HelpingMethods.TAB;
-                    JsonFileView += $"{tab}\"customer_id\": {appUser.CustomerId}, \n";
-                    JsonFileView += $"{tab}\"name\": {appUser.Name}, \n";
-                    JsonFileView += $"{tab}\"email\": {appUser.Email}, \n";
-                    JsonFileView += $"{tab}\"age\": {appUser.Age}, \n";
-                    JsonFileView += $"{tab}\"city\": {appUser.City}, \n";
-                    JsonFileView += $"{tab}\"is_premuim\": {appUser.IsPremium}, \n";
+                    JsonFileView += $"{tab}\"customer_id\": \"{appUser.CustomerId}\", \n";
+                    JsonFileView += $"{tab}\"name\": \"{appUser.Name}\", \n";
+                    JsonFileView += $"{tab}\"email\": \"{appUser.Email}\", \n";
+                    JsonFileView += $"{tab}\"age\": \"{appUser.Age}\", \n";
+                    JsonFileView += $"{tab}\"city\": \"{appUser.City}\", \n";
+                    JsonFileView += $"{tab}\"is_premium\": \"{appUser.IsPremium}\", \n";
                     JsonFileView += $"{tab}\"orders\": [\n";
                     tab += HelpingMethods.TAB;
                     for (int j = 0; j < appUser.Orders.Count(); j++)
@@ -142,7 +147,48 @@ namespace ClassesLibrary
                 }
                 JsonFileView += "]";
                 Console.WriteLine(JsonFileView);
+                return JsonFileView;
             }                  
+        }
+
+        public static void WriteJsonToFile()
+        {
+            HelpingMethods.GetFilePath();
+            string json = WriteJsonToConsole(HelpingMethods.currentAppUsers);
+            if (json == null)
+            {
+                Console.WriteLine("No json file at this moment");
+            }
+            else
+            {
+                TextWriter flow = Console.Out;
+                using (StreamWriter file = new StreamWriter(HelpingMethods.file_path, false))
+                {
+                    Console.SetOut(file);
+                    Console.Write(json);
+                }
+                Console.SetOut(flow);
+            }
+        }
+
+        public static void CreateNewJsonFile()
+        {
+            HelpingMethods.GetFilePath();
+            string json = WriteJsonToConsole(HelpingMethods.currentAppUsers);
+            if (json == null)
+            {
+                Console.WriteLine("No json file at this moment");
+            }
+            else
+            {
+                TextWriter flow = Console.Out;
+                using (StreamWriter file = new StreamWriter(HelpingMethods.file_path))
+                {
+                    Console.SetOut(file);
+                    Console.Write(json);
+                }
+                Console.SetOut(flow);
+            }
         }
     }
 }
