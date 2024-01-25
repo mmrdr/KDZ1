@@ -102,45 +102,48 @@ namespace ClassesLibrary
 
         public static void WriteJson(List<AppUser> appUsers)
         {
-            string tab = HelpingMethods.TAB;
-            string JsonFileView = String.Empty;
-            JsonFileView += "[\n";
-            for (int i = 0; i < appUsers.Count; i++)
+            if (appUsers.Count != 0)
             {
-                AppUser appUser = appUsers[i];
-                JsonFileView += $"{tab}{{\n";
-                tab += HelpingMethods.TAB;
-                JsonFileView += $"{tab}\"customer_id\": {appUser.CustomerId}, \n";
-                JsonFileView += $"{tab}\"name\": {appUser.Name}, \n";
-                JsonFileView += $"{tab}\"email\": {appUser.Email}, \n";
-                JsonFileView += $"{tab}\"age\": {appUser.Age}, \n";
-                JsonFileView += $"{tab}\"city\": {appUser.City}, \n";
-                JsonFileView += $"{tab}\"is_premuim\": {appUser.IsPremium}, \n";
-                JsonFileView += $"{tab}\"orders\": [\n";
-                tab += HelpingMethods.TAB;
-                for (int j = 0; j < appUser.Orders.Count(); j++)
+                string tab = HelpingMethods.TAB;
+                string JsonFileView = String.Empty;
+                JsonFileView += "[\n";
+                for (int i = 0; i < appUsers.Count; i++)
                 {
-                    JsonFileView += $"{tab}{appUser.Orders[j]}, \n";
-                    if (j ==  appUser.Orders.Count - 1)
+                    AppUser appUser = appUsers[i];
+                    JsonFileView += $"{tab}{{\n";
+                    tab += HelpingMethods.TAB;
+                    JsonFileView += $"{tab}\"customer_id\": {appUser.CustomerId}, \n";
+                    JsonFileView += $"{tab}\"name\": {appUser.Name}, \n";
+                    JsonFileView += $"{tab}\"email\": {appUser.Email}, \n";
+                    JsonFileView += $"{tab}\"age\": {appUser.Age}, \n";
+                    JsonFileView += $"{tab}\"city\": {appUser.City}, \n";
+                    JsonFileView += $"{tab}\"is_premuim\": {appUser.IsPremium}, \n";
+                    JsonFileView += $"{tab}\"orders\": [\n";
+                    tab += HelpingMethods.TAB;
+                    for (int j = 0; j < appUser.Orders.Count(); j++)
                     {
-                        JsonFileView += $"{tab}{appUser.Orders[j]} \n";
+                        JsonFileView += $"{tab}{appUser.Orders[j]}, \n";
+                        if (j == appUser.Orders.Count - 1)
+                        {
+                            JsonFileView += $"{tab}{appUser.Orders[j]} \n";
+                        }
+                    }
+                    tab = tab.Remove(tab.Length - HelpingMethods.TAB.Length, HelpingMethods.TAB.Length);
+                    JsonFileView += $"{tab}]\n";
+                    tab = tab.Remove(tab.Length - HelpingMethods.TAB.Length, HelpingMethods.TAB.Length);
+                    if (i != appUsers.Count - 1)
+                    {
+                        JsonFileView += $"{tab}}},\n";
+                    }
+                    else
+                    {
+                        JsonFileView += $"{tab}}}\n";
                     }
                 }
-                tab = tab.Remove(tab.Length - HelpingMethods.TAB.Length, HelpingMethods.TAB.Length);
-                JsonFileView += $"{tab}]\n";
-                tab = tab.Remove(tab.Length - HelpingMethods.TAB.Length, HelpingMethods.TAB.Length);
-                if (i != appUsers.Count - 1)
-                {
-                    JsonFileView += $"{tab}}},\n";
-                }
-                else
-                {
-                    JsonFileView += $"{tab}}}\n";
-                }
-            }
-            JsonFileView += "]";
-            Console.WriteLine(JsonFileView);          
+                JsonFileView += "]";
+                Console.WriteLine(JsonFileView);
+            }                  
         }
     }
 }
-//C:\Users\murd3rRRR\source\repos\KDZ1_Isaev_Kirill\Smth\bin\Debug\net6.0\data_8V.JSON
+

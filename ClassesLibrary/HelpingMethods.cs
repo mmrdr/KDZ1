@@ -290,5 +290,36 @@ namespace ClassesLibrary
                 "7. \"orders\"");
             Console.Write("What you want to fill: ");
         }
+
+        internal static void SelectionSortingMenu()
+        {
+            Console.WriteLine("1. Customer id\n" +
+                "2. Name\n" +
+                "3. Email\n" +
+                "4. Age\n" +
+                "5. City\n" +
+                "6. Premium status\n" +
+                "7. Orders");
+        }
+
+        internal static ConsoleKey Item()
+        {
+            var key = Console.ReadKey().Key;
+            while (key != ConsoleKey.D1 && key != ConsoleKey.D2 && key != ConsoleKey.D3 && key != ConsoleKey.D4
+                && key != ConsoleKey.D5 && key != ConsoleKey.D6 && key != ConsoleKey.D7)
+            {
+                Console.WriteLine("Incorrect input, try again");
+                Console.Write("Which field will be selectered: ");
+                key = Console.ReadKey().Key;
+            }
+            return key;
+        }
+
+        internal static void Welcoming()
+        {
+            Console.WriteLine("Which field will be selectered: ");
+            HelpingMethods.SelectionSortingMenu();
+            Console.CursorVisible = false;
+        }
     }
 }
