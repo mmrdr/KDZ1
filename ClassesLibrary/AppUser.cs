@@ -1,5 +1,8 @@
 ﻿namespace ClassesLibrary
 {
+    /// <summary>
+    /// Class, including all data for json file.
+    /// </summary>
     public class AppUser
     {
         /// <summary>

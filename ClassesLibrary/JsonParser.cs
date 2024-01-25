@@ -1,9 +1,14 @@
-﻿using System.Text.RegularExpressions;
-
-namespace ClassesLibrary
+﻿namespace ClassesLibrary
 {
+    /// <summary>
+    /// This class simulates json parser.
+    /// </summary>
     public static class JsonParser
     {
+        /// <summary>
+        /// This method reads all data from json file
+        /// </summary>
+        /// <returns></returns>
         public static List<AppUser> ReadJson()
         {
             HelpingMethods.GetFilePath();
@@ -81,15 +86,19 @@ namespace ClassesLibrary
             return appUsers;
         }
 
+        /// <summary>
+        /// This method reads all data from user(from console).
+        /// </summary>
+        /// <returns></returns>
         public static List<AppUser> ReadJsonFromConsole()
         {
             var appUsers = new List<AppUser>();
             do
             {
                 Console.Clear();
-                Console.WriteLine("Starting system...");
+                HelpingMethods.PrintWithColor("Starting system...", ConsoleColor.Yellow);
                 HelpingMethods.FillAppUsersFields(appUsers);
-                Console.WriteLine("Data uploaded successfully");
+                HelpingMethods.PrintWithColor("Data uploaded successfully", ConsoleColor.Yellow);
                 Thread.Sleep(1000);
                 Console.Clear();
                 Console.WriteLine("If you want to fill another user press ENTER\n" +
@@ -100,6 +109,11 @@ namespace ClassesLibrary
             return appUsers;           
         }
 
+        /// <summary>
+        /// Output json info in console.
+        /// </summary>
+        /// <param name="appUsers"></param>
+        /// <returns></returns>
         public static string WriteJsonToConsole(List<AppUser> appUsers)
         {
             if (HelpingMethods.currentAppUsers == null)
@@ -151,6 +165,9 @@ namespace ClassesLibrary
             }                  
         }
 
+        /// <summary>
+        /// This method overwrite json file with new info.
+        /// </summary>
         public static void WriteJsonToFile()
         {
             HelpingMethods.GetFilePath();
@@ -171,6 +188,9 @@ namespace ClassesLibrary
             }
         }
 
+        /// <summary>
+        /// This method creates new file with new info.
+        /// </summary>
         public static void CreateNewJsonFile()
         {
             HelpingMethods.GetFilePath();

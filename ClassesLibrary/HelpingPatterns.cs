@@ -1,5 +1,8 @@
 ﻿namespace ClassesLibrary
 {
+    /// <summary>
+    /// Only usefull patterns and some usefull fields, like "currentAppUsers".
+    /// </summary>
     public partial class HelpingMethods
     {
         internal const string TAB = "  ";

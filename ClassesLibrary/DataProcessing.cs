@@ -1,10 +1,20 @@
 ﻿
 namespace ClassesLibrary
 {
+    /// <summary>
+    /// Class allow user to make selection or sorting.
+    /// </summary>
     public class DataProcessing
     {
+        /// <summary>
+        /// For temporary info about json file.
+        /// </summary>
         internal static List<AppUser> SelectedAppUsers;
 
+        /// <summary>
+        /// This method allow user to make selection.
+        /// </summary>
+        /// <returns></returns>
         public static List<AppUser> Selecting() 
         {
             if (HelpingMethods.currentAppUsers == null)
@@ -160,6 +170,10 @@ namespace ClassesLibrary
             return SelectedAppUsers;
         }
 
+        /// <summary>
+        /// This method allows user to make sorting.
+        /// </summary>
+        /// <returns></returns>
         public static List<AppUser> Sorting()
         {           
             if (HelpingMethods.currentAppUsers == null)

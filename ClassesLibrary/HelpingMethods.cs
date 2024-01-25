@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace ClassesLibrary
 {
+    /// <summary>
+    /// Important auxiliary methods that verify the correctness of data, etc.
+    /// </summary>
     public partial class HelpingMethods
     {
+        /// <summary>
+        /// Path to file.
+        /// </summary>
         internal static void GetFilePath()
         {
             Console.WriteLine("Input full path to file");
@@ -21,6 +27,10 @@ namespace ClassesLibrary
             file_path = path;
         }
 
+        /// <summary>
+        /// This method json checks file's structure for correctness.
+        /// </summary>
+        /// <returns></returns>
         internal static bool CheckJsonCorrectness()
         {
             if (!CheckUserDataCorrectness()) return false;
@@ -53,6 +63,10 @@ namespace ClassesLibrary
             return true;
         }
 
+        /// <summary>
+        /// This method checks file's data for correctness.
+        /// </summary>
+        /// <returns></returns>
         internal static bool CheckUserDataCorrectness()
         {
             StreamReader jsonFile = new StreamReader(file_path);
@@ -130,7 +144,7 @@ namespace ClassesLibrary
                                         {
                                             if (!double.TryParse(currentLine.TrimEnd(',').Trim().Replace('.', ','), out double value4))
                                             {
-                                                HelpingMethods.PrintWithColor("Incorrect price", ConsoleColor.Red);
+                                                PrintWithColor("Incorrect price", ConsoleColor.Red);
                                                 return false;
                                             }
                                         }
@@ -150,6 +164,10 @@ namespace ClassesLibrary
             return true;
         }
 
+        /// <summary>
+        /// This method allows user to input data for future json file by using only console(and keyboard).
+        /// </summary>
+        /// <param name="appUsers"></param>
         internal static void FillAppUsersFields(List<AppUser> appUsers)
         {
             Console.WriteLine("Do you want to input data for user?[y/n]");
@@ -271,11 +289,15 @@ namespace ClassesLibrary
             if (answer == ConsoleKey.N)
             {
                 Console.Clear();
-                Console.WriteLine("Filling data is over");
+                PrintWithColor("Filling data is over", ConsoleColor.Yellow);
                 Thread.Sleep(1000);
             }
         }
 
+        /// <summary>
+        /// This method checks user's input for correctness.  
+        /// </summary>
+        /// <returns></returns>
         internal static ConsoleKey Item()
         {
             var key = Console.ReadKey().Key;
@@ -289,6 +311,9 @@ namespace ClassesLibrary
             return key;
         }
 
+        /// <summary>
+        /// This method allows user to choose between two styles of writing json file.
+        /// </summary>
         internal static void WriteChoose()
         {
             Console.WriteLine("You want create new file or overwrite current?");
@@ -313,6 +338,9 @@ namespace ClassesLibrary
             }
         }
 
+        /// <summary>
+        /// This method allows user to choose between two styles of sorting json file.
+        /// </summary>
         internal static void SortChoose()
         {
             Console.WriteLine("You want usual sorting or reverse sorting?");

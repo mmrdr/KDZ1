@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClassesLibrary
 {
+    /// <summary>
+    /// Only cosmetic methods, dont need to explain.
+    /// </summary>
     public partial class HelpingMethods
     {
         public static void PrintWithColor(string text, ConsoleColor color)

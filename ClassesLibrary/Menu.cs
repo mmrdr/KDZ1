@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace ClassesLibrary
 {
+    /// <summary>
+    /// This class simulates real menu.
+    /// </summary>
     public class Menu
     {
+        /// <summary>
+        /// Second startpoint at this program.
+        /// </summary>
         public static void StartComputer()
         {
             Console.WriteLine();
@@ -25,10 +31,14 @@ namespace ClassesLibrary
             }
         }
 
+        /// <summary>
+        /// This method provides menu functionality.
+        /// </summary>
         private static void BeginAction()
         {
             do
             {
+                Console.Clear();
                 HelpingMethods.ShowMenu();
                 Console.CursorVisible = false;
                 switch (HelpingMethods.Item())
@@ -61,6 +71,7 @@ namespace ClassesLibrary
                         Console.Clear();
                         JsonParser.WriteJsonToConsole(HelpingMethods.currentAppUsers);
                         Thread.Sleep(2000);
+                        Console.Clear();
                         HelpingMethods.PrintWithColor("Stop looking at file :(", ConsoleColor.DarkRed);
                         Thread.Sleep(1000);
                         break;
