@@ -57,7 +57,7 @@ namespace ClassesLibrary
             }
             if (valueForJsonCheck != 1)
             {
-                HelpingMethods.PrintWithColor("Incorrect structure of brackets", ConsoleColor.Red);
+                PrintWithColor("Incorrect structure of brackets", ConsoleColor.Red);
                 return false;
             }
             return true;
